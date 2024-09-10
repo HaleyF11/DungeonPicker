@@ -1,0 +1,35 @@
+﻿@page "/dungeon-picker"
+
+<PageTitle>Dungeon Picker</PageTitle>
+
+<h1>Dungeons</h1>
+
+<div>
+    @foreach (var dungeon in dungeons)
+    {
+        <h2>@dungeon.Name</h2>
+        <p>@dungeon.Description</p>
+        <p>@dungeon.Expansion</p>
+    }
+</div>
+
+@code {
+    List<Dungeon> dungeons = new();
+
+    protected override void OnInitialized()
+    {
+        dungeons.AddRange(new List<Dungeon>
+        {
+            new Dungeon {Name = "The Stonevault", Description = "Big rocky boys hurt here", Expansion = "The War Within"},
+            new Dungeon {Name = "The Dawnbreaker", Description = "Not for those with vertigo", Expansion = "The War Within"},
+            new Dungeon {Name = "City of Threads", Description = "The new Court of the Stars", Expansion = "The War Within"},
+            new Dungeon {Name = "Ara-Kara, City of Echoes", Description = "Quick and easy", Expansion = "The War Within"},
+            new Dungeon {Name = "Mists of Tirna Scithe", Description = "N/A", Expansion = "Shadowlands" },
+            new Dungeon {Name = "The Necrotic Wake", Description = "N/A", Expansion = "Shadowlands"},
+            new Dungeon {Name = "Siege of Boralus", Description = "N/A", Expansion = "Battle for Azeroth"},
+            new Dungeon {Name = "Grim Batol", Description = "N/A", Expansion = "Cataclysm"}
+        });
+    }
+
+
+}
